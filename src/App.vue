@@ -1,21 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/vue-js-a4567">TheTest</router-link> |
-      <router-link to="/new">New</router-link> |
-      <router-link to="/edit/vue-js-a4567">Edit</router-link>
-    </div>
+    <TheHeader></TheHeader>
     <router-view/>
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import TheHeader from '@/components/TheHeader.vue' // @ is an alias to /src
+
+@Component({
+  components: {
+  TheHeader,
+  },
+  })
+export default class Home extends Vue {}
+</script>
+
 <style lang='scss'>
+body {
+  padding: 0;
+  margin: 0;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /*text-align: center;*/
   color: #2c3e50;
 }
 #nav {
